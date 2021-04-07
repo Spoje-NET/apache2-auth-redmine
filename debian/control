@@ -1,0 +1,16 @@
+Source: apache2-auth-redmine
+Section: unknown
+Priority: optional
+Maintainer: CyberVitexus <vitezslav.dvorak@spojenet.cz>
+Build-Depends: debhelper (>=11~)
+Standards-Version: 4.1.4
+Homepage: https://github.com/Spoje-NET/apache2-auth-redmine
+
+Package: apache2-auth-redmine
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}, libdbd-mysql-perl, libyaml-tiny-perl, libapache2-mod-authnz-external
+Suggests: redmine-mysql
+Description: Use Redmine credentials with Apache
+ External authentification helper for mod-authnz-external working with Redmine's
+ Users and Groups

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>io.github.spoje_net.apache2_auth_redmine</id>
+  
+  <name>apache2-auth-redmine</name>
+  <summary>Authencate apache users aginst the Redmine databases</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <extends>
+    <id>net.spoje.apache2_auth_redmine</id>
+  </extends>
+  
+  <description>
+    <p>
+      Aauthentificators check for presence of given redmine use/group
+    </p>
+  </description>
+  
+  <icon type="stock">apache2-auth-redmine</icon>
+</component>
+

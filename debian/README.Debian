@@ -1,0 +1,15 @@
+apache2-auth-redmine for Debian
+
+Please make sure the symlink /etc/redmine/default/database.yml exist and points to your redmine configuration.
+
+You can also edit scripts /usr/lib/apache2/redmine-group-mysql-auth.pl and /usr/lib/apache2/redmine-mysql-auth.pl
+Where you can edit 
+
+my $config_file = "/etc/redmine/default/database.yml";
+my $environment = "production";
+
+Acording your needs.
+
+
+
+ -- CyberVitexus <info@vitexsoftware.cz>  Wed, 07 Apr 2021 17:53:33 +0200
