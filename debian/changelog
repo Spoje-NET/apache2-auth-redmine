@@ -1,6 +1,9 @@
-apache2-auth-redmine (1.1) UNRELEASED; urgency=medium
+apache2-auth-redmine (0.2) UNRELEASED; urgency=medium
 
   [ Vítězslav Dvořák ]
   * inital
+
+  [ CyberVitexus ]
+  * typo fixed
 
  -- CyberVitexus <vitex@exiv.jinonice.czf>  Wed, 07 Apr 2021 19:11:48 +0200
