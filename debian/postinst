@@ -25,6 +25,7 @@ case "$1" in
     configure)
 
 	if [ -f /usr/sbin/a2enconf ]; then
+	    a2enmod authnz_external
 	    a2enconf auth_redmine
 	fi
     ;;
