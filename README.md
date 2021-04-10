@@ -39,7 +39,7 @@ Simple known user auth
 ----------------------
 
 ```apache
-<Directory "/var/www/html/protected">
+<Directory "/var/www/html/usersonly">
         AuthType Basic
         AuthName "Only for Redmine Users" 
         AuthBasicProvider external
@@ -53,7 +53,7 @@ Group membership based auth
 ---------------------------
 
 ```apache
-<Directory "/var/www/html/protected">
+<Directory "/var/www/html/adminsonly">
         AuthType Basic
         AuthName "Only for Redmine Admins" 
         AuthBasicProvider external
@@ -63,8 +63,28 @@ Group membership based auth
 </Directory>
 ```
 
+**Please look into [Vagrantfile](Vagrantfile) for details how to install on real system.**
+
 Testing
 -------
+
+We provide example [Vagrant](https://www.vagrantup.com/).with whole setup in the box.
+
+In this cloned repository simply run 
+
+```shell
+vagrant up
+```
+
+And wait to things be done.
+After image download, package installation and additional provisioning web iside virtual machine become reachable at
+
+[http://localhost:8090](http://localhost:8090)
+
+Then you can try to open Apache's locations only for redmine users and group members
+
+[For Users](http://localhost:8090/user/)
+[Only for Admins](http://localhost:8090/admin/)
 
 Testing users:
 
@@ -104,11 +124,7 @@ echo $?
 
 Successfull attempt ends with zero return code.
 
-Try yourself
-------------
 
-We provide example [Vagrant](https://www.vagrantup.com/).with whole setup in the box.
-Please look into [Vagrantfile] for detalis
 
 
 See Also:
