@@ -104,9 +104,15 @@ echo $?
 
 Successfull attempt ends with zero return code.
 
+Try yourself
+------------
+
+We provide example [Vagrant](https://www.vagrantup.com/).with whole setup in the box.
+Please look into [Vagrantfile] for detalis
 
 
-See Also: 
+See Also:
+---------
 
  * https://github.com/haegar/mod-auth-external/blob/master/mod_authnz_external/INSTALL
  * http://anders.fix.no/software/#unix
