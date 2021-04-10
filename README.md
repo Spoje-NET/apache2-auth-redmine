@@ -41,7 +41,7 @@ Simple known user auth
         AuthType Basic
         AuthName "Only for Redmine Users" 
         AuthBasicProvider external
-        AuthExternal redmine
+        AuthExternal redmineuser
         Require valid-user
 </Directory>
 
@@ -53,7 +53,7 @@ Group membership based auth
 ```apache
 <Directory "/var/www/html/protected">
         AuthType Basic
-        AuthName "Only for Redmine Users" 
+        AuthName "Only for Redmine Admins" 
         AuthBasicProvider external
         AuthExternal redmineuser
         GroupExternal redminegroup
@@ -70,7 +70,7 @@ Testing users:
   | login	| password	| member of group |
   |-------------|---------------|-----------------
   | admin	| Cli@queel3	|
-  | john	| dydCag9knag	| admins
+  | john	| dydCag9knag	| admin
   | doe		| steevCor2ov	| users
 
 
