@@ -2,4 +2,6 @@
 /debian/apache2-auth-redmine/
 /debian/apache2-auth-redmine.substvars
 /debian/debhelper-build-stamp
+/deb/
+.vagrant
 

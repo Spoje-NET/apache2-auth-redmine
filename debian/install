@@ -1,4 +1,4 @@
 *.pl							usr/lib/apache2/
-auth_redmine.conf					etc/apache2/conf-availble/
+auth_redmine.conf					etc/apache2/conf-available/
 apache2-auth-redmine.svg				usr/share/icons/hicolor/scalable/apps/
 io.github.spoje_net.apache2_auth_redmine.metainfo.xml	usr/share/metainfo/

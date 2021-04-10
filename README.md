@@ -61,6 +61,18 @@ Group membership based auth
 </Directory>
 ```
 
+Testing
+-------
+
+Testing users:
+
+
+  | login	| password	| member of group |
+  |-------------|---------------|-----------------
+  | admin	| Cli@queel3	|
+  | john	| dydCag9knag	| admins
+  | doe		| steevCor2ov	| users
+
 
 
 See Also: 

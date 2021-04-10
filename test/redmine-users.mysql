@@ -1,0 +1,52 @@
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL DEFAULT '',
+  `hashed_password` varchar(40) NOT NULL DEFAULT '',
+  `firstname` varchar(30) NOT NULL DEFAULT '',
+  `lastname` varchar(255) NOT NULL DEFAULT '',
+  `admin` tinyint(1) NOT NULL DEFAULT 0,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `last_login_on` datetime DEFAULT NULL,
+  `language` varchar(5) DEFAULT '',
+  `auth_source_id` int(11) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `identity_url` varchar(255) DEFAULT NULL,
+  `mail_notification` varchar(255) NOT NULL DEFAULT '',
+  `salt` varchar(64) DEFAULT NULL,
+  `must_change_passwd` tinyint(1) NOT NULL DEFAULT 0,
+  `passwd_changed_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_users_on_id_and_type` (`id`,`type`),
+  KEY `index_users_on_auth_source_id` (`auth_source_id`),
+  KEY `index_users_on_type` (`type`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `users` (`id`, `login`, `hashed_password`, `firstname`, `lastname`, `admin`, `status`, `last_login_on`, `language`, `auth_source_id`, `created_on`, `updated_on`, `type`, `identity_url`, `mail_notification`, `salt`, `must_change_passwd`, `passwd_changed_on`) VALUES
+(1, 'admin', '3c83101615afdc35332b86da114a7f8e9a01ec99', 'Redmine', 'Admin', 1, 1, '2021-04-09 18:02:25', '', NULL, '2021-03-28 13:38:52', '2021-04-09 18:03:00', 'User', NULL, 'all', '77ceb04ebe883e39715332857328b5d2', 0, '2021-04-09 18:03:00'),
+(2, '', '', '', 'Anonymous users', 0, 1, NULL, '', NULL, '2021-03-28 13:39:09', '2021-03-28 13:39:09', 'GroupAnonymous', NULL, '', NULL, 0, NULL),
+(3, '', '', '', 'Non member users', 0, 1, NULL, '', NULL, '2021-03-28 13:39:09', '2021-03-28 13:39:09', 'GroupNonMember', NULL, '', NULL, 0, NULL),
+(4, '', '', '', 'Anonymous', 0, 0, NULL, '', NULL, '2021-04-07 16:12:56', '2021-04-07 16:12:56', 'AnonymousUser', NULL, 'only_my_events', NULL, 0, NULL),
+(5, '', '', '', 'admin', 0, 1, NULL, '', NULL, '2021-04-09 18:10:38', '2021-04-09 18:10:38', 'Group', NULL, '', NULL, 0, NULL),
+(6, '', '', '', 'users', 0, 1, NULL, '', NULL, '2021-04-09 18:10:49', '2021-04-09 18:10:49', 'Group', NULL, '', NULL, 0, NULL),
+(7, 'john', 'd142f2c2b0de8f2b858fad2262a7f2a5f1744ecb', 'john', 'john', 0, 1, NULL, 'en', NULL, '2021-04-09 18:14:38', '2021-04-09 18:14:38', 'User', NULL, 'only_my_events', '4c840a448168a314b84309c0b1786d53', 0, '2021-04-09 18:14:38'),
+(8, 'doe', 'a543907021ef55c08504bb053efc1e5a772b9c45', 'doe', 'doe', 0, 1, NULL, 'en', NULL, '2021-04-09 18:15:33', '2021-04-09 18:15:33', 'User', NULL, 'only_my_events', '002c8c3268da1e2817e7dfae89b9d36e', 0, '2021-04-09 18:15:33');
+
+DROP TABLE IF EXISTS `groups_users`;
+CREATE TABLE `groups_users` (
+  `group_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `groups_users` (`group_id`, `user_id`) VALUES
+(5, 7),
+(6, 8);
+
+ALTER TABLE `groups_users`
+  ADD UNIQUE KEY `groups_users_ids` (`group_id`,`user_id`);
+COMMIT;
+
