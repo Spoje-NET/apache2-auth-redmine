@@ -73,13 +73,43 @@ Testing users:
   | john	| dydCag9knag	| admin
   | doe		| steevCor2ov	| users
 
+Auth tool read login and password from stdin in simple format
+
+```
+login
+password
+
+```
+
+So You can test basic functionality from commandline:
+
+```shell
+echo -e "admin\nCli@queel3\n" | /usr/lib/apache2/redmine-mysql-auth.pl 
+```
+
+Gives you error message to stderr:
+
+```
+[Sat Apr 10 17:59:56 2021] /usr/lib/apache2/redmine-mysql-auth.pl: invalid characters used in login/password - Rejected
+```
+
+The credentials was rejeced cause the '@' character in admin's password. Then script ends with **1** code as you can check using "$?" macro:
+
+```shell
+echo $?
+1
+```
+
+Successfull attempt ends with zero return code.
+
 
 
 See Also: 
 
  * https://github.com/haegar/mod-auth-external/blob/master/mod_authnz_external/INSTALL
  * http://anders.fix.no/software/#unix
-
+ * https://spojenet.cz/
 
 ![Apache](apache.svg?raw=true)
 ![Redmin](redmine.svg?raw=true)
+![Spoje.Net](logo-spojenet.png?raw=true)
