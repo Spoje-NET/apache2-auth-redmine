@@ -21,7 +21,6 @@ my $dbuser="redmine";
 my $dbpw="redmine";
 my $dbname="redmine";
 my $dbport="3306";
-my $mychars="01234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_,.";
 
 # Below this, only the SQL query should be interesting to modify for users.
 
@@ -56,13 +55,6 @@ chomp $user;
 # Get the password name
 $pass= <STDIN>;
 chomp $pass;
-
-# check for valid characters
-if (!validchars($user, $mychars) || !validchars($pass, $mychars)) {
-	print STDERR "$logprefix: invalid characters used in login/password - Rejected\n";
-	exit 1;
-}
-
 
 # Open the config
 $yaml = YAML::Tiny->read( $config_file );

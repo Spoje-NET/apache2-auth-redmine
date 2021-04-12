@@ -109,22 +109,14 @@ So You can test basic functionality from commandline:
 echo -e "admin\nCli@queel3\n" | /usr/lib/apache2/redmine-mysql-auth.pl 
 ```
 
-Gives you error message to stderr:
-
-```
-[Sat Apr 10 17:59:56 2021] /usr/lib/apache2/redmine-mysql-auth.pl: invalid characters used in login/password - Rejected
-```
-
-The credentials was rejected cause the '@' character in admin's password. Then script ends with **1** code as you can check using "$?" macro:
+The credentials was accepted. The script ends with **0** code as you can check using "$?" macro:
 
 ```shell
 echo $?
-1
+0
 ```
 
-Successfull attempt ends with zero return code.
-
-
+Unsuccessfull attempt ends with **one** return code.
 
 
 See Also:
