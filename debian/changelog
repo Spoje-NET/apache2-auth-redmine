@@ -1,7 +1,10 @@
-apache2-auth-redmine (0.3) UNRELEASED; urgency=medium
+apache2-auth-redmine (0.4) UNRELEASED; urgency=medium
 
   [ Vítězslav Dvořák ]
   * typo fixed
   * special char checking removed
 
- -- CyberVitexus <vitex@exiv.jinonice.czf>  Wed, 07 Apr 2021 19:11:48 +0200
+  [ CyberVitexus ]
+  * Reject locked user #2
+
+ -- CyberVitexus <vitex@exiv.jinonice.czf>  Mon, 03 May 2021 10:56:49 +0200
