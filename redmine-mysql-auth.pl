@@ -89,7 +89,7 @@ if (!$dbh) {
 	exit 1;
 }
 
-my $dbq = $dbh->prepare("SELECT login AS username, hashed_password AS password, salt FROM users WHERE login = ?;");
+my $dbq = $dbh->prepare("SELECT login AS username, hashed_password AS password, salt, status FROM users WHERE login = ?;");
 $dbq->bind_param(1, $user);
 $dbq->execute;
 my $row = $dbq->fetchrow_hashref();
@@ -105,8 +105,14 @@ if ($row->{password} eq "") {
 my $salt=$row->{salt};
 
 if ($row->{password} eq sha1_hex( $salt . sha1_hex( $pass ) ) ) {
-	print STDERR "$logprefix: password for user $user matches - Accepted\n";
-	exit 0;
+
+	if($row->{status} eq 3){
+		print STDERR "$logprefix: $user is locked - Rejected\n";
+		exit 1;
+	} else {
+		print STDERR "$logprefix: password for user $user matches - Accepted\n";
+		exit 0;
+	}
 } else {
 	print STDERR "$logprefix: password for user $user does not match - Rejected\n";
 	exit 1;
