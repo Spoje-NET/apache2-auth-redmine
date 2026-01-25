@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.spoje_net.apache2_auth_redmine</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>__NO_COPYRIGHT_NOR_LICENSE__</project_license>
+  <name>apache2-auth-redmine</name>
+  <summary>Use Redmine credentials with Apache</summary>
+  <description>
+    <p>
+      External authentification helper for mod-authnz-external working with Redmine's Users and Groups
+    </p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://github.com/Spoje-NET/apache2-auth-redmine</url>
+  <url type="bugtracker">https://github.com/Spoje-NET/apache2-auth-redmine/issues</url>
+  <developer id="io.github.spoje_net">
+    <name>Spoje.Net</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+</component>
